@@ -9,7 +9,8 @@ results/
 # Jupyter Notebooks
 *.ipynb
 
-**/*_test.*
+**/*test.*
+**/*playground.*
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python,pycharm,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,python,pycharm,git
