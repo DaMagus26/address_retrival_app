@@ -17,6 +17,9 @@ class PoolManager:
         self._worker_function = worker_function
 
     async def process_request(self, text):
-        with self._executor as exctr:
-            result = await wrap_future(exctr.submit(self._worker_function, text))
-            print(result)
+        result = await wrap_future(self._executor.submit(self._worker_function, text))
+        # self._executor.shutdown(wait=False)
+        return result
+
+    def shutdown(self, wait=True):
+        self._executor.shutdown(wait)

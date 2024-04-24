@@ -1,0 +1,2 @@
+REGISTRY_PATH = 'data/Gar77'
+WORKERS_COUNT = 3
