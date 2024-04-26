@@ -1,11 +1,14 @@
+"""
+This file contains code, that sets up application API
+"""
 import asyncio
 
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import JSONResponse
 import uvicorn
 
-from utils.types import SingleInput, BatchInput, ProcessingOutput
+from utils.types import SingleInput, BatchInput
 import config
 from start_app import EXECUTOR, _initialize_workers
 
@@ -36,7 +39,10 @@ async def process_batch(data: BatchInput):
         EXECUTOR.shutdown(wait=False)
         return
     except Exception as err:
-        return JSONResponse(content={'error': err.__class__}, status_code=500)
+        return JSONResponse(
+            content={'error': err.__class__},
+            status_code=500
+        )
 
 
 @app.post('/process/single')
@@ -52,7 +58,10 @@ async def process_single(data: SingleInput):
         EXECUTOR.shutdown(wait=False)
         return
     except Exception as err:
-        return JSONResponse(content={'error': err.__class__}, status_code=500)
+        return JSONResponse(
+            content={'error': err.__class__},
+            status_code=500
+        )
 
 
 if __name__ == '__main__':

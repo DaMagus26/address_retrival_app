@@ -1,10 +1,13 @@
-from pullenti.address.ProcessTextParams import ProcessTextParams
-from pullenti.address.AddressService import AddressService
+"""
+This file contains classes for object
+"""
 
 from pathlib import Path
 from typing import Optional, List
 
 from retrievers.base import BaseAddressRetriever
+from pullenti.address.ProcessTextParams import ProcessTextParams
+from pullenti.address.AddressService import AddressService
 
 
 class PullentiAddressRetriever(BaseAddressRetriever):
@@ -53,7 +56,6 @@ class PullentiAddressRetriever(BaseAddressRetriever):
             raise RuntimeError(
                 f'{self.__class__.__name__} must be initialized before running. Try `{self.__class__.__name__}.initialize()`'
             )
-
 
         addrs = AddressService.process_text(text, self._pars)
 

@@ -1,3 +1,7 @@
+"""
+This file contains wrappers for ProcessPoolExecutor, that is
+used for implementing manager/worker architecture
+"""
 from concurrent.futures import ProcessPoolExecutor
 from typing import Callable
 from asyncio import wrap_future

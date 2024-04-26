@@ -1,3 +1,7 @@
+"""
+Type declarations for incoming API requests
+"""
+
 from pydantic import BaseModel
 from typing import List
 
