@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: python_machine.dockerfile
+    ports:
+      - "8000:10123"
+    volumes:
+      - "${PWD}/:/project/"
+    expose:
+      - "8000"
+    command: python3 main.py
