@@ -6,7 +6,8 @@ import config
 
 
 PullentiAddressRetriever.initialize()
-_retr = PullentiAddressRetriever(config.REGISTRY_PATH, inspect_regions=[77])
+# _retr = PullentiAddressRetriever(config.REGISTRY_PATH, inspect_regions=[77])
+_retr = PullentiAddressRetriever(None, inspect_regions=[77])
 
 EXECUTOR = PoolManager(_retr, config.WORKERS_COUNT, PullentiAddressRetriever.initialize)
 

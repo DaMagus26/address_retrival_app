@@ -1,2 +1,5 @@
 REGISTRY_PATH = 'data/Gar77'
 WORKERS_COUNT = 3
+APP_HOST_GLOBAL = 'localhost'
+APP_HOST_LOCAL = 'localhost'
+APP_PORT = 10123

@@ -2,7 +2,7 @@
 .idea/
 .env
 
-results/
+./data/
 
 !docker-compose.local.yml
 

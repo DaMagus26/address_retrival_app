@@ -50,7 +50,7 @@ async def process_single(data: SingleInput):
 if __name__ == '__main__':
     try:
         asyncio.run(_initialize_workers(EXECUTOR, config.WORKERS_COUNT))
-        uvicorn.run('main:app', host='localhost', port=8000)
+        uvicorn.run('main:app', host='0.0.0.0', port=config.APP_PORT)
     except KeyboardInterrupt:
         print('Keyboard interrupt')
         EXECUTOR.shutdown(wait=False)
