@@ -2,7 +2,7 @@
 .idea/
 .env
 
-./data/
+./data/Gar77
 
 !docker-compose.local.yml
 

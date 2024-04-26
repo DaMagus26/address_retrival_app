@@ -13,6 +13,14 @@ from start_app import EXECUTOR, _initialize_workers
 app = FastAPI()
 
 
+@app.get('/')
+async def ping():
+    return JSONResponse(content={
+        'status': 'running',
+        'cores': config.WORKERS_COUNT
+    })
+
+
 @app.post('/process/batch')
 async def process_batch(data: BatchInput):
     try:
